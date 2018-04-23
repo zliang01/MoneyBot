@@ -15,7 +15,7 @@ public class StayCommand implements CommandExecutor {
 		this.moneybot = moneybot;
 	}
 	
-	@Command(aliases = "$bet", description = "Allows a user to bet money on games in this channel")
+	@Command(aliases = "$stay", description = "Allows a user to bet money on games in this channel")
 	public String onStayCommand(String[] args, Message message) {
 		if (!this.moneybot.isEnabledChannel(message)) {
 			message.delete();

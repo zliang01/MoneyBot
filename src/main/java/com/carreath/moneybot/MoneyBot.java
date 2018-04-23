@@ -31,6 +31,8 @@ public class MoneyBot {
 		handler.registerCommand(new QuitCommand(this));
 		handler.registerCommand(new StartCommand(this, token));
 		handler.registerCommand(new BetCommand(this));
+		handler.registerCommand(new HitCommand(this));
+		handler.registerCommand(new StayCommand(this));
 		
 		api.addMessageCreateListener(event -> {
 			

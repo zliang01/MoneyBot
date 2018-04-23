@@ -35,9 +35,9 @@ public class StartCommand implements CommandExecutor {
 		switch (args[0]) {
 			case "blackjack":
 				if(this.moneybot.getBlackJackGame().isActive(channelId)) {
-					System.out.println(this.moneybot.getBlackJackGame().getCurrentPhase(channelId));
 					if (this.moneybot.getBlackJackGame().getCurrentPhase(channelId) == BlackJackPhase.WaitingPhase) {
 						this.moneybot.getBlackJackGame().setCurrentPhase(channelId, BlackJackPhase.BettingPhase);
+						this.moneybot.getBlackJackGame().resetBets(channelId);
 						return "Starting next round of BlackJack. Place your bets! Type \'**$bet blackjack <amount>**\'";
 					}
 					return "This blackjack game must finish the current hand to start the next round...";

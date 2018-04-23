@@ -1,13 +1,9 @@
 package main.java.com.carreath.moneybot;
 
+import main.java.com.carreath.moneybot.commands.*;
 import main.java.com.carreath.moneybot.enums.BlackJackPhase;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
-
-import main.java.com.carreath.moneybot.commands.StartCommand;
-import main.java.com.carreath.moneybot.commands.JoinCommand;
-import main.java.com.carreath.moneybot.commands.CreateCommand;
-import main.java.com.carreath.moneybot.commands.QuitCommand;
 
 import de.btobastian.sdcf4j.CommandHandler;
 import de.btobastian.sdcf4j.handler.JavacordHandler;
@@ -34,6 +30,7 @@ public class MoneyBot {
 		handler.registerCommand(new JoinCommand(this));
 		handler.registerCommand(new QuitCommand(this));
 		handler.registerCommand(new StartCommand(this, token));
+		handler.registerCommand(new BetCommand(this));
 		
 		api.addMessageCreateListener(event -> {
 			
